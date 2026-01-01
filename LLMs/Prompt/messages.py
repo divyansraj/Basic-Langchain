@@ -9,3 +9,11 @@ llm = ChatOpenAI(
     openai_api_key=os.getenv("GITHUB_TOKEN"),
     openai_api_base="https://models.inference.ai.azure.com"
 )
+messages= [
+    SystemMessage(content="You are a helpful assistant."),
+    HumanMessage(content="Hello, who won the world series in 2020?"),
+]
+result = llm.invoke(messages)
+print("AI: ", result.content)
+messages.append(AIMessage(content=result.content))
+print("Current conversation:", messages)
