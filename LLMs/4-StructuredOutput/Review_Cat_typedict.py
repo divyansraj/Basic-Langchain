@@ -29,11 +29,11 @@ from langchain_openai import ChatOpenAI
 load_dotenv()
 
 class Review(TypedDict):
-    key_words: Annotated[str,"Write down the keywords on which the review is based."]
+    key_words: Annotated[list[str],"Write down the keywords on which the review is based."]
     summary: Annotated[str,"A brief summary of the review."]
     sentiment: Annotated[str,"The sentiment of the review (positive, neutral, negative)."]
-    pros: Annotated[str,"List the pros mentioned in the review."]
-    cons: Annotated[str,"List the cons mentioned in the review."]
+    pros: Annotated[list[str],"List the pros mentioned in the review."]
+    cons: Annotated[list[str],"List the cons mentioned in the review."]
     recommendation_score: Annotated[float,"A score from 1 to 10 indicating the likelihood of recommending this product."]
 
 model = ChatOpenAI(model="gpt-4.1")
@@ -45,7 +45,7 @@ for review_text in oneplus_nord_5_reviews:
     output = structured_output.invoke(review_text)
     results.append(output)
 
-with open("oneplus_nord_5_reviews.csv", "w", newline="", encoding="utf-8") as f:
+with open("reviews_typedict.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(
         f,
         fieldnames=["key_words","summary","sentiment", "pros", "cons", "recommendation_score"]
