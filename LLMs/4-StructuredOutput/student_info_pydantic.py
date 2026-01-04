@@ -22,9 +22,9 @@ oneplus_nord_5_reviews = [
 ]
 
 import csv
-from typing import TypedDict, Annotated
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
+from typing import TypedDict, Annotated
 from pydantic import BaseModel, Field
 
 load_dotenv()
