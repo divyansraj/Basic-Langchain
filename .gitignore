@@ -3,5 +3,6 @@ venv
 *.txt
 *.docx
 *.pdf
+*.csv
 *.log
 
