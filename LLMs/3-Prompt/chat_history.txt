@@ -1,4 +1,0 @@
-HumanMessage(content="I want to request a refund for my recent order. The amount was deducted but the product was never delivered."),
-AIMessage(content="I'm sorry for the inconvenience. I can help you with the refund. Could you please share your order ID so I can check the details?"),
-HumanMessage(content="Sure, the order ID is ORD123456. The payment was done three days ago."),
-AIMessage(content="Thank you for the details. I have verified the order and initiated the refund process. The amount should be credited back to your account within 5–7 business days.")
