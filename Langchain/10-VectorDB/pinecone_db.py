@@ -53,7 +53,7 @@ doc5 = Document(
     )
 docs = [doc1, doc2, doc3, doc4, doc5]
 
-vector_store.add_documents(docs)
+#vector_store.add_documents(docs)
 # docs = vector_store.similarity_search(
 #     query="IPL players",
 #     k=10
